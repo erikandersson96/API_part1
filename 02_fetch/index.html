@@ -12,10 +12,13 @@
 
     <script>
         fetch("https://ci-swapi.herokuapp.com/api/")
-            .then(response => response.text()) // or .json()
+            .then(response => response.text()) // or .json() to see it in an object version, but then you can add people to data like seen down below
             .then(data => {
-                document.getElementById("content").innerText = data;
-            });
+                document.getElementById("content").innerText = data; // add "people" to see the human link api. Use dot notation but you can also use brackets like this: ["people"]
+            })
+            .catch((e) => {
+                console.error("Error: ", e); 
+            })
     </script>
 </body>
 
